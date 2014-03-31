@@ -274,6 +274,6 @@ public class DBOperations {
 
     public static void main(String[] args) {
         DBOperations db = new DBOperations();
-
+db.brandList();
     }
 }
