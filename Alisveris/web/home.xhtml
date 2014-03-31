@@ -1,0 +1,222 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+
+        <ui:composition template="./template.xhtml">
+
+            <ui:define name="content">
+               	<div class="container">
+
+                    <div class="row">
+
+                        <div class="span8">
+                            <div class="flexslider">
+                                <ul class="slides">
+                                    <li><img src="resources/img/614x300.jpg" alt="slide1"/></li>
+                                    <li><img src="resources/img/614x300.jpg" alt="slide2"/></li>
+                                    <li><img src="resources/img/614x300.jpg" alt="slide3"/></li>
+                                </ul>
+                            </div><!--end flexslider-->
+                        </div><!--end span8-->
+
+
+                        <div class="span4">
+
+                            <div id="homeSpecial">
+                                <div class="titleHeader clearfix">
+                                    <h3>Special</h3>
+                                    <div class="pagers">
+                                        <div class="btn-toolbar">
+                                            <div class="btn-group">
+                                                <button class="btn btn-mini vNext"><i class="icon-caret-down"></i></button>
+                                                <button class="btn btn-mini vPrev"><i class="icon-caret-up"></i></button>
+                                            </div>
+                                            <button class="btn btn-mini">View All</button>
+                                        </div>
+                                    </div>
+                                </div><!--end titleHeader-->
+
+
+                                <ul class="vProductItems cycle-slideshow vertical clearfix"
+                                    data-cycle-fx="carousel"
+                                    data-cycle-timeout="0"
+                                    data-cycle-slides="> li"
+                                    data-cycle-next=".vPrev"
+                                    data-cycle-prev=".vNext"
+                                    data-cycle-carousel-visible="2"
+                                    data-cycle-carousel-vertical="true"
+                                    >
+                                    <li class="span4 clearfix">
+                                        <div class="thumbImage">
+                                            <a href=""><img src="resources/img/92x92.jpg" alt=""/></a>
+                                        </div>
+                                        <div class="thumbSetting">
+                                            <div class="thumbTitle">
+                                                <a href="#" class="invarseColor">
+                                                    Foliomania the title here
+                                                </a>
+                                            </div>
+                                            <div class="thumbPrice">
+                                                <span>$150.00</span>
+                                            </div>
+                                            <ul class="rating">
+                                                <li><i class="star-off"></i></li>
+                                                <li><i class="star-off"></i></li>
+                                                <li><i class="star-off"></i></li>
+                                                <li><i class="star-off"></i></li>
+                                                <li><i class="star-off"></i></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="span4 clearfix">
+                                        <div class="thumbImage">
+                                            <a href=""><img src="resources/img/92x92.jpg" alt=""/></a>
+                                        </div>
+                                        <div class="thumbSetting">
+                                            <div class="thumbTitle">
+                                                <a href="#" class="invarseColor">
+                                                    Foliomania the designer portfolio
+                                                </a>
+                                            </div>
+                                            <div class="thumbPrice">
+                                                <span>$150.00</span>
+                                            </div>
+                                            <ul class="rating">
+                                                <li><i class="star-on"></i></li>
+                                                <li><i class="star-on"></i></li>
+                                                <li><i class="star-on"></i></li>
+                                                <li><i class="star-off"></i></li>
+                                                <li><i class="star-off"></i></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li class="span4 clearfix">
+                                        <div class="thumbImage">
+                                            <a href=""><img src="resources/img/92x92.jpg" alt=""/></a>
+                                        </div>
+                                        <div class="thumbSetting">
+                                            <div class="thumbTitle">
+                                                <a href="#" class="invarseColor">
+                                                    Foliomania the designer portfolio
+                                                </a>
+                                            </div>
+                                            <div class="thumbPrice">
+                                                <span>$150.00</span>
+                                            </div>
+                                            <ul class="rating">
+                                                <li><i class="star-on"></i></li>
+                                                <li><i class="star-on"></i></li>
+                                                <li><i class="star-on"></i></li>
+                                                <li><i class="star-off"></i></li>
+                                                <li><i class="star-off"></i></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div><!--end special-->
+                        </div><!--end span4-->
+
+                    </div><!--end row-->
+
+
+
+                    <div class="row">
+                        <div class="span12">
+
+                            <div id="featuredItems">
+
+                                <div class="titleHeader clearfix">
+                                    <h3>Featured Items</h3>
+                                    <div class="pagers">
+                                        <div class="btn-toolbar">
+                                            <button class="btn btn-mini">View All</button>
+                                        </div>
+                                    </div>
+                                </div><!--end titleHeader-->
+
+                                <div class="row">
+                                    <ul class="hProductItems clearfix">
+                                        <ui:repeat value="#{ctrProduct.listProduct}" var="productList" >
+                                            <li class="span3 clearfix">
+                                                <div class="thumbnail">
+                                                    <a href=""><img src="#{productList.image}"  alt="salam" width="212" height="192" /></a>
+                                                </div>
+                                                <div class="thumbSetting">
+                                                    <div class="thumbTitle">
+                                                        <a href="#" class="invarseColor">
+                                                            #{productList.short_article}
+                                                        </a>
+                                                    </div>
+                                                    <div class="thumbPrice">
+                                                        <span> $#{productList.price}</span>
+                                                    </div>
+
+                                                    <div class="thumbButtons">
+                                                        <button class="btn btn-primary btn-small" data-title="+To Cart" data-placement="top" data-toggle="tooltip">
+                                                            <i class="icon-shopping-cart"></i>
+                                                        </button>
+                                                        <button class="btn btn-small" data-title="+To WishList" data-placement="top" data-toggle="tooltip">
+                                                            <i class="icon-heart"></i>
+                                                        </button>
+
+                                                        <button class="btn btn-small" data-title="+To Compare" data-placement="top" data-toggle="tooltip">
+                                                            <i class="icon-refresh"></i>
+                                                        </button>
+                                                    </div>
+
+                                                    <ul class="rating">
+                                                        <li><i class="star-on"></i></li>
+                                                        <li><i class="star-on"></i></li>
+                                                        <li><i class="star-on"></i></li>
+                                                        <li><i class="star-on"></i></li>
+                                                        <li><i class="star-off"></i></li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                        </ui:repeat>
+
+
+                                    </ul>
+                                </div><!--end row-->
+                            </div><!--end featuredItems-->
+                        </div><!--end span12-->
+                    </div><!--end row-->
+
+
+
+
+                    <div class="row">
+                        <div class="span12">
+                            <div id="brands">
+                                <div class="titleHeader clearfix">
+                                    <h3>Brands</h3>
+                                    <div class="pagers">
+                                        <div class="btn-toolbar">
+                                            <button class="btn btn-mini">View All</button>
+                                        </div>
+                                    </div>
+                                </div><!--end titleHeader-->
+
+                                <ul class="brandList clearfix">
+                                    <ui:repeat value="#{ctrProduct.listBrand}" var="brand">
+                                        <li>
+                                            <a href="#{brand.brand_link}" rel="external,nofollow"> <img src="#{brand.brand_image}" alt="logo"/> </a>
+                                        </li>	
+                                    </ui:repeat>
+
+                                </ul>
+                            </div><!--end brands-->
+                        </div><!--end span12-->
+                    </div><!--end row-->
+
+                </div><!--end conatiner-->
+            </ui:define>
+
+        </ui:composition>
+
+    </body>
+</html>

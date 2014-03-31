@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <body>
+        <style>
+            .wrapper {
+                text-align: center;
+            }
+
+            .button {
+                position: absolute;
+                top: 50%;
+            }
+        </style>
+        <ui:composition template="./template.xhtml">
+
+            <ui:define name="content">
+                <h:form>
+                    <div class="container">
+                        <h:selectOneMenu value="#{cajax.selectedCriteria}">
+                            <f:selectItem itemLabel="En Son Eklenenler" itemValue="insert_date"/>
+                            <f:selectItem itemLabel="Fiyata Gore(Azalan)" itemValue="price"/>
+                            <f:selectItem itemLabel="Fiyata Gore (Artan)" itemValue="Price"/>
+                            <f:selectItem itemLabel="Rating" itemValue="raiting"/>
+                            <f:ajax execute="@form" render="@form"/>
+                        </h:selectOneMenu>
+                        <div class="row">
+
+                            <ul class="hProductItems clearfix">
+                                <ui:repeat value="#{cajax.listProductPrice}" var="productList" >
+                                    <li class="span3 clearfix">
+                                        <div class="thumbnail">
+                                            <a href=""><img src="#{productList.image}" style="width: 212px !important; height: 192px !important;"  alt="salam" width="212" height="300" /></a>
+                                        </div>
+                                        <div class="thumbSetting">
+                                            <div class="thumbTitle">
+                                                <a href="#" class="invarseColor">
+                                                    #{productList.short_article}
+                                                </a>
+                                            </div>
+                                            <div class="thumbPrice">
+                                                <span> $#{productList.price}</span>
+                                            </div>
+
+                                            <div class="thumbButtons">
+                                                <button class="btn btn-primary btn-small" data-title="+To Cart" data-placement="top" data-toggle="tooltip">
+                                                    <i class="icon-shopping-cart"></i>
+                                                </button>
+                                                <button class="btn btn-small" data-title="+To WishList" data-placement="top" data-toggle="tooltip">
+                                                    <i class="icon-heart"></i>
+                                                </button>
+
+                                                <button class="btn btn-small" data-title="+To Compare" data-placement="top" data-toggle="tooltip">
+                                                    <i class="icon-refresh"></i>
+                                                </button>
+                                            </div>
+
+                                            <ul class="rating">
+                                                <li><i class="star-on" ><input type="radio" name="rating" value="1"/></i></li>
+                                                <input class="star-on" type="radio" name="rating" value="2"/>
+                                                <input class="star-on" type="radio" name="rating" value="3"/>
+                                                <input class="star-on" type="radio" name="rating" value="4"/>
+                                                <input class="star-on" type="radio" name="rating" value="5"/>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                 </ui:repeat>
+
+
+
+                                                                    </ul>
+
+                                                                    </div><!--end row-->
+
+                                                                    </div>
+                                                                    <br/>
+                                                                    <div class="wrapper" style="background-color: #ededed">
+                                                                        <h:commandLink style="font-family: Times New Roman; font-size: 18px; color: #000"    value="NÖVBƏTİ">
+                                                                            <f:ajax execute="@form" render="@form" listener="#{cajax.artir()}" />
+                                                                        </h:commandLink>
+                                                                    </div>
+                                                                    </h:form>
+                                                                    </ui:define>
+
+                                                                    </ui:composition>
+
+
+                                                                    </body>
+                                                                    </html>
