@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        
+
+        <title>Facelets Template</title>
+
+        <!-- CSS
+  ================================================== -->
+        <link rel="stylesheet" href="resources/css/bootstrap.min.css" media="screen"/>
+        <!-- jquery ui css -->
+        <link rel="stylesheet" href="resources/css/jquery-ui-1.10.1.min.css"/>
+        <link rel="stylesheet" href="resources/css/customize.css"/>
+        <link rel="stylesheet" href="resources/css/font-awesome.css"/>
+        <link rel="stylesheet" href="resources/css/style.css"/>
+        <!-- flexslider css-->
+        <link rel="stylesheet" href="resources/css/flexslider.css"/>
+        <!-- fancybox -->
+        <link rel="stylesheet" href="resources/js/fancybox/jquery.fancybox.css"/>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
+        <link rel="stylesheet" href="resources/css/font-awesome-ie7.css"/>
+        <!-- Favicons
+        ================================================== -->
+        <link rel="shortcut icon" href="images/favicon.ico"/>
+        <link rel="apple-touch-icon" href="images/apple-touch-icon.png"/>
+        <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png"/>
+        <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png"/>
+        <!-- JS
+             ================================================== -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/jquery-ui.min.js"></script>
+        <!-- jQuery.Cookie -->
+        <script src="js/jquery.cookie.js"></script>
+        <!-- bootstrap -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- flexslider -->
+        <script src="js/jquery.flexslider-min.js"></script>
+        <!-- cycle2 -->
+        <script src="js/jquery.cycle2.min.js"></script>
+        <script src="js/jquery.cycle2.carousel.min.js"></script>
+        <!-- tweets -->
+        <script src="js/jquery.tweet.js"></script>
+        <!-- fancybox -->
+        <script src="js/fancybox/jquery.fancybox.js"></script>
+        <!-- custom function-->
+        <script src="js/custom.js"></script>
+    </h:head>
+
+    <h:body>
+        
+        <div >
+            <ui:include src="/top.xhtml"/>
+        </div>
+
+        <div>
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+
+        <div >
+            <ui:include src="/bottom.xhtml"/>
+        </div>
+
+    </h:body>
+
+</html>
