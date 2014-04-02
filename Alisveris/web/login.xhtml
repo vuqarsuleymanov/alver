@@ -19,29 +19,29 @@
                                     <table>
                                         <tr>
                                             <td>
-                                                <h3>New Customer</h3>
+                                                <h3>Yenİ İstifadəçİ</h3>
                                                 <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.</p>
-                                                <a href="#" class="btn">Register</a>
+                                                <a href="register.xhtml" class="btn">Register</a>
                                             </td>
 
                                             <td>
-                                                <h3>Returning Customer</h3>
-                                                <form method="post" action="page">
+                                                <h3>Daxİl Ol</h3>
+                                                
                                                     <div class="controls">
                                                         <label>Your E-Mail: <span class="text-error">*</span></label>
-                                                        <input type="text" name="" value="" placeholder="example@example.com"/>
+                                                        <h:inputText value="" />
                                                     </div>
                                                     <div class="controls">
                                                         <label>Your Password: <span class="text-error">*</span></label>
-                                                        <input type="password" name="" value="" placeholder="**************"/>
+                                                        <h:inputSecret value="" />
                                                     </div>
                                                     <div class="controls">
                                                         <label class="checkbox">
                                                             <input type="checkbox"/> Check me out
                                                         </label>
-                                                        <button type="submit" class="btn btn-primary">Login</button>
+                                                        <h:commandButton class="btn btn-primary" value="Login" />
                                                     </div>
-                                                </form><!--end form-->
+                                          
                                             </td>
                                         </tr>
                                     </table>
@@ -51,18 +51,13 @@
 
                             <div class="span3">
                                 <div class="titleHeader clearfix">
-                                    <h3>Categories</h3>
+                                    <h3>Bölmələr</h3>
                                 </div><!--end titleHeader-->
                                 <ul class="unstyled my-account">
-                                    <li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> Login or Register</a></li>
-                                    <li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> Forget my Password</a></li>
-                                    <li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> My Account</a></li>
-                                    <li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> My wishlist</a></li>
-                                    <li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> Order History</a></li>
-                                    <li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> Downloads</a></li>
-                                    <li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> Returns</a></li>
-                                    <li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> TRANSACTIONS</a></li>
-                                    <li><a class="invarseColor" href="#"><i class="icon-caret-right"></i> Newlatters</a></li>
+                                     <li><a class="invarseColor" href="forgot.xhtml"><i class="icon-caret-right"></i> Şifrəmi unutdum</a></li>
+                                    <li><a class="invarseColor" href="myaccount.xhtml"><i class="icon-caret-right"></i> Hesabım</a></li>
+                                    <li><a class="invarseColor" href="wishlist.xhtml"><i class="icon-caret-right"></i> Sevimli siyahı</a></li>
+                                    <li><a class="invarseColor" href="orderhistory.xhtml"><i class="icon-caret-right"></i> Sifariş arxivi</a></li>
                                 </ul>
                             </div><!--end span3-->
 
