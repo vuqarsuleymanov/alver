@@ -387,7 +387,7 @@
                                     </div><!--end control-group-->
 
                                     <div class="control-group ">
-                                        <label class="control-label" for="inputLastName">Soyadı;:<span class="text-error">*</span></label>
+                                        <label class="control-label" for="inputLastName">Soyadı:<span class="text-error">*</span></label>
                                         <div class="controls">
                                             <h:inputText id="lastname" value="#{user.l_name}"/>
                                             <span class="help-inline"><h:graphicImage value="resources/images/tick.png" id="llastnametick"/><h:graphicImage value="resources/images/error.png" id="llastnamerror"/></span>
@@ -421,6 +421,14 @@
                                             <h:inputText id="inputCompany" value="#{user.company}"/>
                                         </div>
                                     </div><!--end control-group-->
+                                    
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputCity">Şəhər <span class="text-error">*</span></label>
+                                        <div class="controls">
+                                            <h:inputText id="city" value="#{user.city}"/>
+                                            <span class="help-inline"><h:graphicImage value="resources/images/tick.png" id="lcitytick"/><h:graphicImage value="resources/images/error.png" id="lcityerror"/></span>
+                                        </div>
+                                    </div>
 
                                     <div class="control-group">
                                         <label class="control-label" for="inputFirstAdd">Adres: <span class="text-error">*</span></label>
@@ -437,13 +445,7 @@
                                         </div>
                                     </div><!--end control-group-->
 
-                                    <div class="control-group">
-                                        <label class="control-label" for="inputCity">Şəhər <span class="text-error">*</span></label>
-                                        <div class="controls">
-                                            <h:inputText id="city" value="#{user.city}"/>
-                                            <span class="help-inline"><h:graphicImage value="resources/images/tick.png" id="lcitytick"/><h:graphicImage value="resources/images/error.png" id="lcityerror"/></span>
-                                        </div>
-                                    </div><!--end control-group-->
+                                    <!--end control-group-->
 
                                     <div class="control-group">
                                         <label class="control-label" for="inputPostCode">Post Code: <span class="text-error">*</span></label>
