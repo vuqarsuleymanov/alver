@@ -271,6 +271,39 @@ public class DBOperations {
         }
 
     }
+    
+     public void sendMail(String text, String to, String subject){
+    
+        Properties props = new Properties();
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.socketFactory.port", "465");
+        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.port", "465");
+        
+        Session session = Session.getInstance(props, new javax.mail.Authenticator() {
+            @Override
+            protected PasswordAuthentication getPasswordAuthentication(){
+                return new PasswordAuthentication("orkhan.mirzayev34@gmail.com", "34MRZ34AAOtogetherwith");
+                
+            }
+});
+        try {
+            
+            MimeMessage message = new MimeMessage(session);
+            
+            message.setText(text, "utf-8", "html");
+            message.addRecipients(Message.RecipientType.TO,  InternetAddress.parse(""+to+""));
+            message.setSubject(""+subject+"");
+           
+           
+            Transport.send(message);
+           
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+    }
 
     public static void main(String[] args) {
         DBOperations db = new DBOperations();
