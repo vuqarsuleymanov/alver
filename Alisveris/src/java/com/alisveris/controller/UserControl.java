@@ -186,34 +186,12 @@ public class UserControl {
         user.setRegion(region);
        db.insertUser(user);
        String userCode = db.searchUserCode(email);
-        Properties props = new Properties();
-        props.put("mail.smtp.host", "smtp.gmail.com");
-        props.put("mail.smtp.socketFactory.port", "465");
-        props.put("mail.smtp.socketFactory.class", "javax.net.ssl.SSLSocketFactory");
-        props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.port", "465");
-        
-        Session session = Session.getInstance(props, new javax.mail.Authenticator() {
-            @Override
-            protected PasswordAuthentication getPasswordAuthentication(){
-                return new PasswordAuthentication("orkhan.mirzayev34@gmail.com", "34MRZ34AAOtogetherwith");
-                
-            }
-});
-        try {
-            String text ="<div style='color:red'><a href='http://localhost:16546/Alisveris/faces/activation.jsp?code="+userCode+"'>Gonder</a></div>";
-            MimeMessage message = new MimeMessage(session);
+       String text ="<div style='color:red'><a href='http://localhost:16546/Alisveris/faces/activation.jsp?code="+userCode+"'>Gonder</a></div>";
+        db.sendMail(text, email, "Hesab Aktivasiyası");
             
-            message.setText(text, "utf-8", "html");
-            message.addRecipients(Message.RecipientType.TO,  InternetAddress.parse("orkhan.mirzayev34@gmail.com"));
-            message.setSubject("Test");
            
-           
-            Transport.send(message);
-           
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+            
+         
      return "home";
     }
     
