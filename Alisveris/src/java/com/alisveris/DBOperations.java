@@ -304,6 +304,32 @@ public class DBOperations {
         }
         
     }
+     
+     public String findPasswordByMail(String email){
+    
+        connected();
+        String password ="";
+        String sql = "select password from users where email = ?";
+        try {
+            ps = conn.prepareStatement(sql);
+            ps.setString(1, email);
+            rs = ps.executeQuery();
+            if(rs.next()){
+            
+              password = rs.getString("password");
+            }
+            return password;
+        } catch (SQLException ex) {
+            Logger.getLogger(DBOperations.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+        finally{
+        
+            close();
+        }
+       
+    
+    }
 
     public static void main(String[] args) {
         DBOperations db = new DBOperations();
